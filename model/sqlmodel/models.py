@@ -6,7 +6,6 @@ from django.db import models
     #pass
 
 class Stockmarket(models.Model):
-    
     trade_code = models.TextField()
     open = models.FloatField()
     close = models.FloatField()

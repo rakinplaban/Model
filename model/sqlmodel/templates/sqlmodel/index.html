@@ -7,6 +7,7 @@
 
     <table class="table">
         <tr>
+            <th>Si.</th>
             <th>Date</th>
             <th>Trade Code</th>
             <th>Open</th>
@@ -14,10 +15,12 @@
             <th>High</th>
             <th>Low</th>
             <th>Volume</th>
+            <th></th>
         </tr>
         {% for stock in stock %}
 
             <tr>
+                <td>{{stock.id}}</td>
                 <td>{{stock.date}}</td>
                 <td>{{stock.trade_code}}</td>
                 <td>{{stock.open}}</td>
@@ -25,6 +28,8 @@
                 <td>{{stock.high}}</td>
                 <td>{{stock.low}}</td>
                 <td>{{stock.volume}}</td>
+                <td><a href="{% url 'editdata' stock.id %}" class="btn btn-primary">Update</a>
+                    <a href="{% url 'deletedata' stock.id %}" class="btn btn-danger">Delete</a></td>
             </tr>
                 
         {% endfor %}
