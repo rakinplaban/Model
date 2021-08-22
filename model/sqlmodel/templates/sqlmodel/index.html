@@ -5,6 +5,29 @@
 
 {% block body %}
 
-    <h1>Hi</h1>
+    <table class="table">
+        <tr>
+            <th>Date</th>
+            <th>Trade Code</th>
+            <th>Open</th>
+            <th>Close</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Volume</th>
+        </tr>
+        {% for stock in stock %}
+
+            <tr>
+                <td>{{stock.date}}</td>
+                <td>{{stock.trade_code}}</td>
+                <td>{{stock.open}}</td>
+                <td>{{stock.close}}</td>
+                <td>{{stock.high}}</td>
+                <td>{{stock.low}}</td>
+                <td>{{stock.volume}}</td>
+            </tr>
+                
+        {% endfor %}
+    </table>
 
 {%endblock%}

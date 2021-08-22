@@ -4,7 +4,46 @@
 {% endblock %}
 
 {% block body %}
-
-    <h1>Hallo</h1>
-
+  <div style="margin: 10px 40px 0px 30px;">
+    <form action="{% url 'edit' %}" method="POST">
+        {% csrf_token %}
+        <label class="text-danger">Trade Code</label>
+        <div class="form-group">
+            <input class="form-control" autofocus type="text" name="trade_code" placeholder="Trade Code">
+        </div>
+        <br>
+        <label class="text-danger">Date</label>
+        <div class="form-group">
+            <input class="form-control" autofocus type="date" name="date" placeholder="date">
+        </div>
+        <br>
+        <label class="text-danger">Open</label>
+        <div class="form-group">
+            <input class="form-control" type="number" name="open" placeholder="open" step="0.01">
+        </div>
+        <br>
+        <label class="text-danger">Close</label>
+        <div class="form-group">
+            <input class="form-control" type="number" name="close" placeholder="close" step="0.01">
+        </div>
+        <br>
+        <label class="text-danger">High</label>
+        <div class="form-group">
+            <input class="form-control" type="number" name="high" placeholder="high" step="0.01">
+        </div>
+        <br>
+        <label class="text-danger">Low</label>
+        <div class="form-group">
+            <input class="form-control" type="number" name="low" placeholder="low" step="0.01">
+        </div>
+        <br>
+        <label class="text-danger">Volume</label>
+        <div class="form-group">
+            <input class="form-control" type="number" name="volume" placeholder="Volume" step="0.01">
+        </div>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Insert">
+ 
+    </form>
+  </div>
 {%endblock%}

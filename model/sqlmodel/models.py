@@ -13,6 +13,7 @@ class Stockmarket(models.Model):
     high = models.FloatField()
     low = models.FloatField()
     date = models.DateField()
+    volume = models.IntegerField(null=True)
 
     def __str__(self):
-        return f"date:{self.date} trade_code:{self.trade_code} open:{self.open} close:{self.close} high:{self.high} low{self.low}"
+        return f"date:{self.date} trade_code:{self.trade_code} open:{self.open} close:{self.close} high:{self.high} low:{self.low} volume:{self.volume}"
